@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/enlace2.css">
+    <title>Favoritos</title>
+    <link rel="icon" type="image/png" href="../img/logoo.jpg" />     
+
+    
+</head>
+<body> 
+        <section class="row col-12 col-t-12">
+                <div class="nav ">
+                    <ul class="opcion col-12 col-t-12">
+                    <li><a href="../html/index.html">NEXTIR</a></li> 
+                    <li><a href="">Terror</a></li>
+                    <li><a href="../html/enlace1.html">Comedia</a></li>
+                    <li><a href="">Accion</a></li>
+                    <li><a href="../html/enlace2.html">Favoritas</a></li>
+                    </ul>
+                </div> 
+                </section>
+    <div class="cuadro row col-10 col-t-8">
+    <main class="col-10 col-t-8">
+    <h1>Agregar usuario</h1>
+    <p id="mensaje"></p>
+    <form action="">
+        <input type="text" id="usuario" placeholder="Usuario" autofocus>
+        <input type="text" id="email" placeholder="Email">
+        <label for="">Seleccione Pelicula Favorita</label>
+       
+        <div>
+            <div class="tenue col-10 col-t-3">
+                <img src="../img/IL.png" alt="">
+                <input type="radio" name="chkImg" value="IL.jpg" checked>
+            </div>
+            <div  class="tenue col-10 col-t-3">
+                <img src="../img/TP.png" alt="">
+                <input type="radio" name="chkImg" value="PT.jpg">
+            </div>
+            <div  class="tenue col-10 col-t-3">
+                <img src="../img/img11.jpg" alt="">
+                <input type="radio" name="chkImg" value="img11.jpg">
+            </div>
+            <div  class="tenue col-10 col-t-3">
+                <img src="../img/DP.png" alt="">
+                <input type="radio" name="chkImg" value="DP.jpg">
+            </div>
+            
+        </div>
+
+        <div>
+            <div class="tenue col-10 col-t-8">
+                <img src="../img/Wall E.png" alt="">
+                <input type="radio" name="chkImg" value="Wall E.png" checked>
+            </div>
+            <div  class="tenue col-10 col-t-8">
+                <img src="../img/WW.png" alt="">
+                <input type="radio" name="chkImg" value="WW.png">
+            </div>
+            <div  class="tenue col-10 col-t-8">
+                <img src="../img/Moana-Poster-692x1024.png" alt="">
+                <input type="radio" name="chkImg" value="Moana-Poster-692x1024.png">
+            </div>
+            <div  class="tenue col-10 col-t-8">
+                <img src="../img/Las_dos_torres.png" alt="">
+                <input type="radio" name="chkImg" value="Las_dos_torres.png">
+            </div>
+            
+        </div>
+
+        <a href="#" class="agregar " onclick="AddListUser();">Agregar</a>
+    </form>
+    <h3>Lista de Favoritas</h3>
+    <section id="listUser">
+    </div>
+    
+        
+    </section>
+    
+    <script>
+        function CamposVacios(){
+            let campVacios = false;
+            let txtUser = document.getElementById('usuario');
+            let txtEmail = document.getElementById('email');
+            if(txtUser.value=="" || txtEmail.value==""){
+                campVacios = true;
+            }
+            return campVacios;
+        }
+
+        function CamposValidos(){
+            let respuesta = true; 
+            let txtEmail = document.getElementById('email');
+            if(txtEmail.value.indexOf('@')<0){
+                respuesta = false;
+            }else if(txtEmail.value.indexOf('.')<0){
+                respuesta = false;
+            }
+            return respuesta;
+        }
+
+        function AddListUser(){
+            let showMsg = document.getElementById('mensaje');
+            let txtUser = document.getElementById('usuario');
+            let txtEmail = document.getElementById('email');
+            if(CamposVacios()){
+                showMsg.innerHTML = 'Debe llenar todos los campos!!';
+                setTimeout(()=>showMsg.innerHTML = '',2000);
+            }else if(!CamposValidos()){
+                showMsg.innerHTML = 'El formato de correo no valido'
+                setTimeout(()=>showMsg.innerHTML = '',2000); 
+            }else{
+                let parrafo = document.createElement('p');
+                let nodeContenido = document.createTextNode(txtUser.value);
+                parrafo.appendChild(nodeContenido);
+
+                let s_pan = document.createElement('span');
+                let txtS_pan = document.createTextNode(txtEmail.value);
+                s_pan.appendChild(txtS_pan);
+
+                let fuente = "../img/"+ document.querySelector("[name='chkImg']:checked").value;
+                let imagen = document.createElement('img');
+                imagen.src = fuente;
+
+                let nuevoArticulo = document.createElement('article');
+                nuevoArticulo.appendChild(imagen); 
+                nuevoArticulo.appendChild(parrafo);
+                nuevoArticulo.appendChild(s_pan);
+
+                document.getElementById('listUser').appendChild(nuevoArticulo);
+                showMsg.innerHTML = 'Agregado exitosamente';
+                setTimeout(()=>showMsg.innerHTML = '',2000); 
+
+            }
+            txtEmail.value=""; //limpiar los campos
+            txtUser.value='';
+        }
+
+    </script>
+    </main>
+</body>
+</html>

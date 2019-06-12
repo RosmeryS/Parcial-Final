@@ -1,0 +1,135 @@
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        body *{
+            width: 100%;
+        }
+        h1, h3, p{
+            margin-top: 20px;
+            text-align: center;
+        }
+        body{
+            background-color: deepskyblue;
+        }
+        .fondo{
+            background-color:deepskyblue;
+            
+        }
+        /* .grid{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(91, 190, 177, 0.342);
+            flex-direction: column;
+            align-items: center; 
+            text-align: center;
+        } */
+        .imagen{
+            background-image: url("../img/logoo.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+        p{
+            height: 30px;
+            color: red;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        form *{
+            width: 300px;
+            text-align: center;
+            margin: 8px;
+        }
+        form input{
+            height: 30px;
+            border-radius: 5px;
+            border: 3px solid #e7e7e7;
+            font-size: 16px;
+        }
+        .lista ul{
+            text-align: center;
+        }
+        .lista ul li{
+            padding: 5px;
+        }
+        .agregar{
+            display: block;
+            padding: 5px;
+            background-color: dodgerblue;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .agregar:hover{
+            opacity: 0.8;
+        }
+        @media only screen and (min-width: 600px){ /* TABLET */
+    
+            .col-t-1{width: 8.33%;}
+            .col-t-2{width: 16.66%;}
+            .col-t-3{width: 25%;}
+            .col-t-4{width: 33.33%;}
+            .col-t-5{width: 41.66%;}
+            .col-t-6{width: 50%;}
+            .col-t-7{width: 58.33%;}
+            .col-t-8{width: 66.66%;}
+            .col-t-9{width: 75%;}
+            .col-t-10{width: 83.33%;}
+            .col-t-11{width: 91.66%;}
+            .col-t-12{width: 100%;}
+            nav ul{
+                flex-direction: row;
+            }
+            .nav, section{
+                flex-direction: row;
+            }
+            .nav{        
+                position: sticky;
+                top: 0;
+            }
+        
+        }
+            @media only screen and (min-width: 768px){ /* ESCRITORIO */
+                .col-1{width: 8.33%;}
+                .col-2{width: 16.66%;}
+                .col-3{width: 25%;}
+                .col-4{width: 33.33%;}
+                .col-5{width: 41.66%;}
+                .col-6{width: 50%;}
+                .col-7{width: 58.33%;}
+                .col-8{width: 66.66%;}
+                .col-9{width: 75%;}
+                .col-10{width: 83.33%;}
+                .col-11{width: 91.66%;}
+                .col-12{width: 100%;}
+                .nav{        
+                    position: sticky;
+                    z-index: 2;
+                    top: 0;
+                }
+                article{
+                    flex-basis: 30%;
+                    background-position: center;
+                    background-size: cover;
+                }
+                img{
+                    width: 200px;
+                    height: 300px;
+                }
+                
+            }

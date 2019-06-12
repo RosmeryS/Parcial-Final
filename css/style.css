@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: mifuente2;
+    src: 
+     url('../FUENTES/CustomCraft-Regular.ttf') format('truetype');
+}
+@font-face{
+    font-family: myfont;
+    src : url(../fonts/CustomCraft-Regular.woff) format('woff');
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.imagen{
+background-image: url("../img/nextirr.jpg");
+background-position: center;
+background-size: cover;
+width: 100%;
+height: 60vh;
+}
+h2{
+    font-family: cursive;
+}
+
+[class*="col-"]{
+    float: left;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+}
+/*-----PARTE DEL MENU---------*/
+.opcion{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.opcion li{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 4px 0px;
+    width: 50%;
+}
+.opcion li a{
+    text-decoration: none;
+    color: white;
+}
+.opcion li:hover{
+    background-color: rgb(12, 1, 75);
+}
+.fondito{
+    background-color: #fff;
+}
+.fondo{
+    background-color: beige;
+}
+h2{
+    text-align: center;
+}
+.contenedor{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+video{
+    width: 100%;
+}
+.boton{
+    margin-top: 100px;
+    line-height: 30px;
+    padding: 6px;
+    background-color: rgb(36, 45, 170);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid rgb(32, 27, 95);
+    display: block;
+    width: 100px;
+    text-align: center;
+    margin: auto;
+}
+.boton:hover{
+    background-color: rgba(41, 79, 248, 0.979);
+    /*color: dodgerblue;*/
+    box-shadow: 0 3px 10px black;
+}
+    
+/* ------------------------------------------------------------- NAVBAR */
+/*-------ESTO ES PARTE DEL MENU------*/
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav a{
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(4, 17, 75);
+    color: white;
+    text-decoration: none;
+}
+.nav a:hover{
+    background-color:rgb(4, 17, 75);
+}
+.nav>a>div.desplegable{
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+img {
+    width: 40%;
+    text-align: center;
+    border: 5px solid rgba(0, 47, 90, 0.911);
+}
+/*******************************/
+/*Para el primer enlace*/
+h2{
+    font-family: myfont;
+    font-size: 100px;
+    text-align: center;
+}
+.vid  img  {
+    width: 100%;
+    text-align: center;
+    height: auto;
+}
+.botonsito{
+    margin-top: 200px;
+    line-height: 30px;
+    padding: 6px;
+    background-color: rgb(36, 170, 70);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid rgb(19, 59, 35);
+    display: block;
+    width: 125px;
+    text-align: center;
+    margin: auto;  
+}
+article p{
+    font-size: 10pt;
+}
+.abajo{
+    width: 300%;
+
+}
+/*******************************/
+.centrar{
+    text-align: center;
+}
+.fondo{
+    background-color: rgb(119, 141, 141); 
+}
+.seccion{
+    border: 5px solid black;
+    background-color: lightgray;
+}
+footer p{
+    padding: 10px;
+    background-color: rgba(0, 72, 90, 0.911);
+    text-align: center;
+    color: white;
+}
+/*----------------------------------------------------------*/
+ @media only screen and (min-width: 600px){ /* TABLET */
+    
+    .col-t-1{width: 8.33%;}
+    .col-t-2{width: 16.66%;}
+    .col-t-3{width: 25%;}
+    .col-t-4{width: 33.33%;}
+    .col-t-5{width: 41.66%;}
+    .col-t-6{width: 50%;}
+    .col-t-7{width: 58.33%;}
+    .col-t-8{width: 66.66%;}
+    .col-t-9{width: 75%;}
+    .col-t-10{width: 83.33%;}
+    .col-t-11{width: 91.66%;}
+    .col-t-12{width: 100%;}
+    nav ul{
+        flex-direction: row;
+    }
+    .nav, section{
+        flex-direction: row;
+    }
+    .nav{        
+        position: sticky;
+        top: 0;
+    }
+    img{
+        widows: 150px;
+        height: 200px;
+    }
+
+}
+    @media only screen and (min-width: 768px){ /* ESCRITORIO */
+        .col-1{width: 8.33%;}
+        .col-2{width: 16.66%;}
+        .col-3{width: 25%;}
+        .col-4{width: 33.33%;}
+        .col-5{width: 41.66%;}
+        .col-6{width: 50%;}
+        .col-7{width: 58.33%;}
+        .col-8{width: 66.66%;}
+        .col-9{width: 75%;}
+        .col-10{width: 83.33%;}
+        .col-11{width: 91.66%;}
+        .col-12{width: 100%;}
+        .nav{        
+            position: sticky;
+            z-index: 2;
+            top: 0;
+        }
+        article{
+            flex-basis: 30%;
+            background-position: center;
+            background-size: cover;
+        }
+        img{
+            width: 200px;
+            height: 300px;
+        }
+        
+    }
